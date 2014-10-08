@@ -1,0 +1,44 @@
+<!--
+    Не указан DOCTYPE.
+    Элемент H1 недопустим в HEAD.
+    Внутри таблицы могут быть только THEAD, TBODY, TR.
+    Амперсанд в action должен быт заменен на &amp; т.к. это начало html-entity.
+    Продублирован аттрибут name у input.
+    Не закрыт тег DIV.
+    Неправильный порядок закрытия тегов EM и STRONG.'
+    Дублируется идентификатор элемента.
+    Тег STYLE допустим только в HEAD.
+    CSS не поддерживает вложенные правила.
+    Цвет в css задается либо как #ccc либо как #cccccc.
+-->
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <h1>Опрос!</h1>
+</head>
+<body>
+    <style>
+        #form {
+            border: 1px solid #cccc;
+
+            input[type=submit] {
+                background: red;
+            }
+        }
+    </style>
+    <table id="form">
+        <div>
+            <form action="/doc.html?var1=val1&amp;var2=val2" method="get" id="form">
+                <tr>
+                    <td>
+                        <em><strong>У вас MacOS?.</em></strong>
+                        <input type="checkbox" name="operationSystem"
+                               checked="checked" name="prefSys" value="MacOS"/>
+                        <input type="submit" value="Send"/>
+                    </td>
+                </tr>
+            </form>
+    </table>
+</body>
+</html>

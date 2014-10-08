@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/0. Игра в ошибки/0. Игра в ошибки.iml" filepath="$PROJECT_DIR$/0. Игра в ошибки/0. Игра в ошибки.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1. Табличная верстка/1. Табличная верстка.iml" filepath="$PROJECT_DIR$/1. Табличная верстка/1. Табличная верстка.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2. Блочная верстка/2. Блочная верстка.iml" filepath="$PROJECT_DIR$/2. Блочная верстка/2. Блочная верстка.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3. Блочная верстка на FlexBox/3. Блочная верстка на FlexBox.iml" filepath="$PROJECT_DIR$/3. Блочная верстка на FlexBox/3. Блочная верстка на FlexBox.iml" />
+    </modules>
+  </component>
+</project>
+

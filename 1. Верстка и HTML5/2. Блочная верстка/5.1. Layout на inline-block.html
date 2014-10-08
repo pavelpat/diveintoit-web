@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .layout {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .layout__header {
+            height: 120px;
+            padding: 20px;
+            background: #aaa;
+        }
+
+        .layout__sidebar-left {
+            background: #ccc;
+            display: inline-block;
+            vertical-align: top;
+            width: 20%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .layout__sidebar-right {
+            background: #ccc;
+            display: inline-block;
+            vertical-align: top;
+            width: 20%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .layout__content {
+            background: #ddd;
+            display: inline-block;
+            vertical-align: top;
+            width: 60%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .layout__grid-item {
+            width: 80px;
+            height: 80px;
+            margin: 10px;
+            display: inline-block;
+            border: 1px solid #555;
+            background: #ccc;
+        }
+
+        /* Сетка "едет" при наличии элементов разной высоты. */
+        /*.layout__grid-item__above {*/
+        /*height: 100px;*/
+        /*}*/
+    </style>
+</head>
+<body class="layout">
+    <div class="layout__header">
+        <img src="image/html4.jpg" />
+    </div>
+    <div class="layout__sidebar-left">
+        <img src="image/html4.jpg" />
+        <img src="image/html4.jpg" />
+    </div><div class="layout__content">
+        <h1>Добро пожаловать!</h1>
+        <p>На мою страничку.</p>
+    </div><div class="layout__sidebar-right">
+        <img src="image/html4.jpg" />
+        <img src="image/html4.jpg" />
+    </div>
+</body>
+</html>

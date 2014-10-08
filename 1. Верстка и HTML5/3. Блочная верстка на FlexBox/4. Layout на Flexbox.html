@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        div {
+            border: 1px solid #ccc;
+        }
+
+        .layout {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .layout__middle {
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+        }
+
+        .layout__sidebar-left {
+            flex: 0 0 200px;
+            order: 1;
+        }
+
+        .layout__content {
+            flex: 1 0 500px;
+            order: 2;
+        }
+
+        .layout__sidebar-right {
+            flex: 0 0 200px;
+            order: 3;
+        }
+    </style>
+</head>
+<body class="layout">
+
+    <div class="layout__header">
+        <img src="image/html5.png" alt=""/>
+    </div>
+
+    <div class="layout__middle">
+        <div class="layout__sidebar-left">
+            Left sidebar.
+            <br>
+            <img src="image/html5.png" alt=""/>
+            <img src="image/html5.png" alt=""/>
+            <img src="image/html5.png" alt=""/>
+        </div>
+
+        <div class="layout__sidebar-right">
+            Right sidebar.
+            <br>
+            <img src="image/html5.png" alt=""/>
+            <img src="image/html5.png" alt=""/>
+            <img src="image/html5.png" alt=""/>
+        </div>
+
+        <div class="layout__content">
+            Content.
+            <br>
+            <img src="image/html5.png" alt=""/>
+            <img src="image/html5.png" alt=""/>
+            <img src="image/html5.png" alt=""/>
+        </div>
+    </div>
+
+    <div class="layout__footer">
+        <img src="image/html5.png" alt=""/>
+    </div>
+</body>
+</html>
+</html>

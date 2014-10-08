@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        .layout {
+            width: 100%;
+            height: 100%;
+        }
+
+        .layout td {
+            vertical-align: top;
+            padding: 10px;
+        }
+
+        .layout__header {
+            height: 100px;
+        }
+
+        .layout__column-left, .layout__column-right{
+            background: #ccc;
+            width: 200px;
+            /* Для table-cell элементов width ведет себя как min-width а max-width как width. */
+            /*max-width: 200px;*/
+        }
+
+        .layout__column-middle {
+            background: #eee;
+        }
+
+    </style>
+</head>
+<body>
+    <table class="layout" border="1">
+        <tr>
+            <td colspan="3" class="layout__header">
+                <img src="image/html4.jpg" />
+            </td>
+        </tr>
+        <tr>
+            <td class="layout__column-left">
+                Fuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu
+                <img src="image/html4.jpg" />
+                <img src="image/html4.jpg" />
+            </td>
+            <td class="layout__column-middle">
+                <h1>Добро пожаловать!</h1>
+                <p>На мою страничку.</p>
+            </td>
+            <td class="layout__column-right">
+                Fuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu
+                <img src="image/html4.jpg" />
+                <img src="image/html4.jpg" />
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

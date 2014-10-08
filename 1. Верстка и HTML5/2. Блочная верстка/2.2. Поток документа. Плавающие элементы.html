@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+        body {
+            padding: 20px;
+            border: 1px dotted blue;
+        }
+
+        div, span {
+            border: 1px solid red;
+        }
+
+        .float-left {
+            float: left;
+            border: 2px dashed black;
+        }
+
+        .float-right {
+            float: right;
+            border: 2px dashed black;
+        }
+    </style>
+</head>
+<body>
+    <div class="float-right">
+        DIV - float right.
+    </div>
+
+    <div>
+        DIV - блочный элемент.
+    </div>
+
+    <span style="display: block; width: 100px;">
+        SPAN - строчный элемент.
+    </span>
+
+    <span>
+        SPAN - строчный элемент.
+    </span>
+
+    <!-- Плавающий span стал блочным (у него появилась высота). -->
+    <span class="float-left">
+        SPAN - float left.
+    </span>
+</body>
+</html>
