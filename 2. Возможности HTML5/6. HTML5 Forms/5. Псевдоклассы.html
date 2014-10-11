@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+    <style>
+        input[type=number] {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        input[type=number]:required + label:before {
+            content: "* ";
+            color: red;
+        }
+
+        input[type=number]:valid {
+            border-radius: 3px;
+            border: 5px dashed lightgray;
+        }
+
+        input[type=number]:invalid {
+            border-radius: 3px;
+            border: 5px dashed red;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <!-- Валидация числового поля. -->
+        <input id="number" type="number" required min="0" max="100" step="2">
+        <label for="number">Данный принимает значения от 0 до 100 с шагом 2 и
+            обязателен для заполнения.</label>
+    </form>
+</body>
+</html>

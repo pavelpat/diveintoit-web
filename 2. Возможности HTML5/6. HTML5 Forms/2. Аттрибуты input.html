@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+</head>
+<body>
+    <form id="form-1" action="/main-action" method="get">
+        <!-- Автофокус -->
+        <label>
+            Данный элемент получит фокус по загрузке страницы.
+            <br>
+            <input autofocus>
+        </label>
+        <br>
+        <br>
+
+        <!-- Автодополнение из списка -->
+        <label>
+            Данный элемент позводяет выбрать значение из списка,
+            а свойство autocomplete="off" не отключает выбор из списка.
+            <br>
+            <input list="browsers">
+            <datalist id="browsers">
+                <option value="Internet Explorer">
+                <option value="Firefox">
+                <option value="Chrome">
+            </datalist>
+        </label>
+        <br>
+        <br>
+
+        <!-- Валидация числового поля. -->
+        <label>
+            Данный принимает значения от 0 до 100 с шагом 2 и обязателен для заполнения.
+            <br>
+            <input type="number" required min="0" max="100" step="2">
+        </label>
+        <br>
+        <br>
+
+        <!-- Валидация текстового поля c плейсхолдером. -->
+        <label>
+            Данный принимает значения с текстом aaa, bbb или ccc.
+            <br>
+            <input type="text" pattern=".*(aaa|bbb|ccc).*" placeholder="Должно содердать aaa, bbb или ccc.">
+        </label>
+        <br>
+        <br>
+
+        <!-- Input type="file" с множественным выбором. -->
+        <label>
+            Зажмите ctrl для выбора нескольких файлов.
+            <br>
+            <input type="file" multiple>
+        </label>
+        <br>
+        <br>
+
+        <!-- Кнопка submit изменяет поведение формы. -->
+        <input type="submit" formaction="/another-action" formmethod="post"
+               value="Отправить на другой адрес "/>
+    </form>
+    <br>
+    <br>
+
+    <!-- Определение элемента формы вне формы. -->
+    <label>
+        Данный элемент будет отправлен вместе с формой, благодаря аттрибуту "form".
+        <br>
+        <input form="form-1">
+    </label>
+</body>
+</html>

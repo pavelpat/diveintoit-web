@@ -1,0 +1,25 @@
+WEBVTT FILE
+
+1
+00:00:00.500 --> 00:00:02.000
+{
+    "title": "Заголовок...",
+    "description": "<h1>Это второй пример субтитров.</h1>",
+    "href": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Video_Text_Tracks_Format"
+}
+
+2
+00:00:02.500 --> 00:00:04.300
+{
+    "title": "Заголовок...",
+    "description": "Он такой же, как и первый пример.",
+    "href": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Video_Text_Tracks_Format"
+}
+
+3
+00:00:05.000 --> 00:00:07.000
+{
+    "title": "Заголовок...",
+    "description": "<u>Но размечен через HTML и JSON.</u>",
+    "href": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Video_Text_Tracks_Format"
+}

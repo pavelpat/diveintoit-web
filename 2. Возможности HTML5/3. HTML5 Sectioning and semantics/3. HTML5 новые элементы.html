@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .rb {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        figure {
+            background: #eee;
+            padding: 10px;
+            width: 100px;
+        }
+        figcaption {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<!-- BDI -->
+<!--<p dir="ltr">-->
+    <!--Следующий текст содержит <bdi>ВСТАВКУ ИЗ ТЕКСТА</bdi> справа-налево.-->
+<!--</p>-->
+
+<!-- Details -->
+<!--<details>-->
+    <!--<summary>Some details</summary>-->
+    <!--<p>More info about the details.</p>-->
+<!--</details>-->
+
+<!-- Dialog -->
+<!--<dialog open>-->
+    <!--<p>Greetings, one and all!</p>-->
+<!--</dialog>-->
+
+<!-- Figure & caption -->
+<!--<figure>-->
+    <!--<div class="rb"></div>-->
+    <!--<figcaption>Подпись к картинке.</figcaption>-->
+<!--</figure>-->
+
+<!-- Mark -->
+<!--<p>Для <mark>пометки текста</mark> используется тег mark.</p>-->
+
+<!-- Meter и progress -->
+<!--<meter min="100" max="1000" value="500" optimum="500" low="250" high="750">500</meter>-->
+<!--<progress value="70" max="100">70 %</progress>-->
+
+<!-- Time -->
+<!--<p>Время <time>20:00</time>.</p>-->
+<!--<p>Концерт начнется <time datetime="2001-05-15 19:00">15 мая</time>.</p>-->
+
+<!-- Menu -->
+<div class="rb" contextmenu="menu"></div>
+<menu type="context" id="menu">
+    <menuitem label="Hello" onclick="window.alert('Hello!');"></menuitem>
+</menu>
+
+</body>
+</html>
