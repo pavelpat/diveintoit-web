@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+        @namespace url('http://www.w3.org/1999/xhtml');
+        @namespace svg url('http://www.w3.org/2000/svg');
+        @namespace foo url('http://example.com/ns/xyz');
+
+        /* Совпадет с элементами "ellipse" в пространстве имен по-умолчанию (html). */
+        ellipse {
+            /*display: none;*/
+        }
+
+        /* Совпадет с элементами "ellipse" в пространстве имен SVG. */
+        svg|ellipse {
+            /*display: none;*/
+        }
+
+        /* Совпадет с элементами "ellipse" во всех пространствах имен. */
+        *|ellipse {
+            /*display: none;*/
+        }
+
+        /* Совпадет с элементом bar из foo. */
+        foo|bar {
+            /*display: none;*/
+        }
+    </style>
+</head>
+<body>
+    <!-- Несуществующий элемент. Для примера. -->
+    <ellipse>
+        Эллипс html.
+    </ellipse>
+
+    <!-- SVG-элемент в неявном пространтсве имен. -->
+    <svg height="200">
+        <ellipse cx="100" cy="100" rx="100" ry="50" fill="#ed3c23" />
+        <ellipse cx="170" cy="100" rx="100" ry="50" fill="#309bd7" />
+    </svg>
+
+    <!-- Собственный элемент в собственном пространстве имен. -->
+    <abc xmlns:foo="http://example.com/ns/xyz">
+        <foo:bar>
+            Свое простанство имен.
+        </foo:bar>
+    </abc>
+</body>
+</html>

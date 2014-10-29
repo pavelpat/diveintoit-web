@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px dotted black;
+            display: inline-block;
+            margin: 10px;
+            position: relative;
+        }
+        
+        .background-layer {
+            position: absolute;
+            width: 800px;
+            z-index: -1;
+        }
+
+        .div1 {
+            background: rgba(255, 0, 0, 0.9);
+        }
+
+        .div2 {
+            background: hsl(0, 100%, 50%);
+        }
+
+        .div3 {
+            background: hsl(120, 100%, 50%);
+        }
+
+        .div4 {
+            background: hsla(240, 100%, 50%, 0.75);
+        }
+
+        .div5 {
+            background: hsla(240, 100%, 50%, 1);
+        }
+    </style>
+</head>
+<body>
+    <p class="background-layer">
+        фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон
+        фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон
+        фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон фон
+    </p>
+
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    <div class="div4"></div>
+    <div class="div5"></div>
+</body>
+</html>

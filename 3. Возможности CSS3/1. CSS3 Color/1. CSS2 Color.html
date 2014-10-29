@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta name="http-equiv" content="Content-Type: text/html; charset=UTF-8">
+
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px dotted black;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .div1 {
+            background: transparent;
+        }
+
+        .div2 {
+            background: red;
+            background: #F00;
+            background: #FF0000;
+        }
+
+        .div3 {
+            background: rgb(255, 0, 0);
+        }
+
+        .div4 {
+            background: rgb(100%, 0%, 0%);
+        }
+
+        .div5 {
+            /* Ошибка: только целочисленные значения. */
+            background: rgb(254.5, 0, 0);
+        }
+
+        .div6 {
+            /* Ошибка: смешивание процентной записи и целочисленной. */
+            background: rgb(100%, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    <div class="div4"></div>
+    <div class="div5"></div>
+    <div class="div6"></div>
+</body>
+</html>

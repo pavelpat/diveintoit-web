@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+        /* CSS 1 */
+        p {}
+        body p {}
+        p.class {}
+        p#identifier {}
+        p#identifier.class1.class2.class3 {}
+
+        /* Все дочерние p любой вложенности. */
+        div p {}
+
+        /* CSS 2 */
+        * { }
+
+        /* Аттрибут attr сожержит указанную строку. */
+        p[attr="test1 test2 test3"] {}
+
+        /* Аттрибут attr содержит значение test2 среди значений разделенных пробелами. */
+        p[attr~="test2"] {}
+
+        /* Аттрибут attr начинается с test1, далее дефис, далее что угодно. */
+        p[attr|="test1"] {}
+
+        /* Только непосредственно дочерние p. */
+        div.child > p { }
+
+        /* Следующий элемент того же уровня после первого. */
+        div.child > p:first-of-type + p {}
+
+
+        /* CSS 3 */
+        /* Аттрибут attr содержит bar */
+        p[attr*="bar"] {}
+
+        /* Аттрибут attr заканчивается на bar */
+        p[attr$="bar"] {}
+
+        /* Аттрибут attr начинается с bar */
+        p[attr^="bar"] {}
+
+        /* Все элементы того же уровня что и найденный. */
+        div.child > p:first-of-type ~ * {}
+    </style>
+</head>
+<body>
+    <!-- CSS 1 -->
+    <p class="class class1 class2" id="identifier"></p>
+
+    <div>
+        <p></p>
+    </div>
+
+    <!-- CSS 2 -->
+    <p attr="test1 test2 test3"></p>
+    <p attr="test1-test2"></p>
+
+    <!-- CSS 3 -->
+    <p attr="bar a b c"></p>
+    <p attr="a b c bar"></p>
+    <p attr="a bar c"></p>
+
+    <!-- Комбинаторы (CSS 1, CSS 2, CSS 3). -->
+    <div class="child">
+        </<p>p>
+        <p></p>
+        <p></p>
+        <div>
+            <p></p>
+        </div>
+    </div>
+</body>
+</html>

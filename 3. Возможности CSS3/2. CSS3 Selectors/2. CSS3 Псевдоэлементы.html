@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+        .example-1 {
+            width: 500px;
+            border: 1px solid black;
+            padding: 20px;
+        }
+
+        .example-1::first-line {
+            text-decoration: line-through;
+        }
+
+        .example-1::first-letter {
+            font-size: 200%;
+            color: red;
+        }
+
+        .example-1::after {
+            content: "::after";
+            display: block;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="example-1">
+        Съешь ещё этих мягких французских булок, да выпей [же] чаю.
+        Съешь ещё этих мягких французских булок, да выпей [же] чаю.
+        Съешь ещё этих мягких французских булок, да выпей [же] чаю.
+    </div>
+</body>
+</html>

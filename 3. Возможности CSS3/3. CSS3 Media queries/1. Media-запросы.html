@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!-- Media-запрос через link. -->
+    <link rel="stylesheet" media="(max-width: 800px)" href="style1.css" />
+    <link rel="stylesheet" media="(max-width: 1000px), (min-width: 1200px)" href="style2.css" />
+
+    <!-- Media-запрос через style/ -->
+    <style>
+        @media (min-width: 700px) { }
+        @media all and (min-width: 700px) { }
+
+        /* Цвет бит на пиксель. */
+        @media all and (min-color: 4) { }
+
+        /* Цвета в палитре цветов. */
+        @media all and (min-color-index: 256) { }
+
+        /* Соотношение сторон места вывода устройства. */
+        @media screen and (min-aspect-ratio: 1/1) { }
+
+        /* Соотношение сторон дисплея устройства */
+        @media screen and (device-aspect-ratio: 16/9) { }
+
+        /* Высота и ширина дисплея устройства. */
+        @media screen and (max-device-height: 799px) { }
+        @media screen and (max-device-width: 799px) { }
+
+        /* Запрос для монохромных устройств с глубиной бит/пиксель. */
+        @media all and (monochrome) { }
+        @media all and (min-monochrome: 8) { }
+
+        /* Ориентация устройства. */
+        @media all and (orientation: portrait) { }
+
+        /* Разрешение экрана в точках на дюйм. */
+        @media print and (min-resolution: 300dpi) { }
+
+        /* Тип развертки у tv. */
+        @media tv and (scan: progressive) { }
+
+        /* Ширина и высота области вывода. */
+        @media all and (min-width: 640px), all and (min-height: 480px) { }
+    </style>
+</head>
+<body>
+
+</body>
+</html>

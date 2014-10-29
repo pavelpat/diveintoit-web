@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+        h3 {
+            margin: 30px 0 10px;
+        }
+
+        /* Выбирает элемент, идентификатор которого совпадает со значением после # в адресной строке. */
+        .test-target:target { background: red; }
+
+        /* Выбирает выключенный элемент ввода. */
+        .test-enabled-disabled:disabled { background: red; }
+
+        /* Выбирает включенный элемент ввода. */
+        .test-enabled-disabled:enabled { background: blue; }
+
+        /* Выбирает отмеченый чекбокс. */
+        .test-checked:checked { outline: 5px solid red; }
+
+        /* Выбирает помеченые как indeterminate из JS элементы. */
+        .test-indeterminate:indeterminate { outline: 5px solid red; }
+
+        /* Выбирает корневой элемент (html). */
+        :root {}
+
+        /* Выбирает из найденных элементов корневой. */
+        .elements-set:root {}
+
+        /* Не находит элементов. */
+        body:root {}
+
+        /* Выбирает первый и последний дочерний элементы и проверяет, что они p. */
+        .test-nth-child p:first-child { background: red; }
+        .test-nth-child p:last-child { background: blue; }
+
+        /* Выбирает нечетные элементы. */
+        .test-nth-child p:nth-child(2n+1) { background: red; }
+        .test-nth-child p:nth-child(odd) { background: red; }
+
+        /* Выбирает четные элементы. */
+        .test-nth-child p:nth-child(2n) { background: blue; }
+        .test-nth-child p:nth-child(even) { background: blue; }
+
+        /* Выбирает третий элемент. */
+        .test-nth-child p:nth-child(3) { background: black; }
+
+        /* Выбирает третий с конца элемент. */
+        .test-nth-child p:nth-last-child(3) { background: blue; }
+
+        /* Выбирает первый дочерний div. */
+        .test-nth-of-type div:first-of-type { background: blue; }
+
+        /* Выбирает пятый дочерний p. */
+        .test-nth-of-type p:nth-of-type(5) { background: red; }
+
+        /* Выбирает p только если он единственный дочерний элемент. */
+        .test-only p:only-child { background: red; }
+
+        /* Выбирает p только если он единственный дочерний элемент p. */
+        .test-only p:only-of-type { background: blue; }
+
+        /* Закрашивает empty-элементы красным, не-empty - синим. */
+        .test-empty { background: blue; width: 300px; height: 20px; margin: 10px; }
+        .test-empty:empty { background: red; }
+
+        /* Закрашивает найденный элемент красным. */
+        .test-not p{ background: blue; width: 300px; height: 20px; margin: 10px; }
+        .test-not p:not(:first-of-type) { background: red; }
+    </style>
+</head>
+<body>
+    <h3>Псевдокласс :target</h3>
+    <a href="#test">Перейти</a> по anchor.
+    <div id="test" class="test-target">
+        Съешь ещё этих мягких французских булок, да выпей [же] чаю.
+    </div>
+
+    <h3>Псевдоклассы :disabled, :enabled</h3>
+    <input class="test-enabled-disabled">
+    <input class="test-enabled-disabled" disabled>
+
+    <h3>Псевдокласс :checked</h3>
+    <input type="checkbox" class="test-checked">
+
+    <h3>Псевдокласс :indeterminate</h3>
+    <input type="checkbox" class="test-indeterminate">
+    <script type="text/javascript">
+        document.querySelector('.test-indeterminate').indeterminate = true;
+    </script>
+
+    <h3>Псевдоклассы :first-child, :last-child, :nth-child, nth-last-child</h3>
+    <div class="test-nth-child">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <div>5</div>
+        <p>6</p>
+    </div>
+
+    <h3>Псевдоклассы :nth-first-of-type, :nth-last-of-type, :nth-of-type, :nth-last-of-type</h3>
+    <div class="test-nth-of-type">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <div>5</div>
+        <p>6</p>
+    </div>
+
+    <h3>Псевдоклассы :only-child, :only-of-type.</h3>
+    <div class="test-only">
+        <p>1</p>
+        <div>2</div>
+    </div>
+
+    <h3>Псевдокласс :empty.</h3>
+    <div class="test-empty">Не пустой</div>
+    <div class="test-empty"><span>С дочерним элементом</span></div>
+    <div class="test-empty"></div>
+    <div class="test-empty"><!-- C комментарием --></div>
+
+    <h3>Псевдокласс :not.</h3>
+    <div class="test-not">
+        <p>1</p>
+        <p>2</p>
+    </div>
+</body>
+</html>

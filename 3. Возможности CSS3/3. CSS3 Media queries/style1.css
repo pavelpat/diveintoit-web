@@ -1,0 +1,4 @@
+body:before {
+    content: "Подключен style1.css";
+    display: block;
+}
