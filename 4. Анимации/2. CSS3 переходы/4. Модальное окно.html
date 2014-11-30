@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="background.css">
+    <link rel="stylesheet" href="modal.css">
+    <script type="text/javascript" src="prefixfree.min.js"></script>
+
+    <style type="text/css">
+        a {
+            color: white;
+        }
+
+        .modal {
+            transition: transform .3s, opacity .3s, visibility .3s;
+            transform: translateY(-600px);
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .modal__shown {
+            visibility: visible;
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+<a href="#">Показать окно</a>
+
+<div class="modal">
+    <div class="modal__content">
+        Модальное окно.
+    </div>
+</div>
+
+<script type="text/javascript">
+    document.querySelector('a').addEventListener('click', function () {
+        document.querySelector('.modal').classList.toggle('modal__shown');
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="background.css">
+    <link rel="stylesheet" href="cloud.css">
+</head>
+<body>
+<div class="cloud"></div>
+
+<script>
+    /* Данный пример показывает, что так делать нельзя. */
+    var cloud = document.querySelector('.cloud');
+
+    for (var i = 0; i <= 1000; i++) {
+        cloud.style.left = i + 'px';
+
+        // Имитация sleep();
+        for (var j = 0; j <= 10000; j++) { window.j = j; }
+    }
+</script>
+</body>
+</html>

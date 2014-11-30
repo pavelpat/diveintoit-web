@@ -1,0 +1,35 @@
+/* Описание стилей меню. */
+.menu {
+    margin: 100px auto;
+    width: 800px;
+    height: 30px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, .8);
+    padding: 0 10px;
+    position: relative;
+}
+
+.menu__item {
+    float: left;
+    display: block;
+    padding: 6px 10px;
+    text-align: center;
+}
+
+.menu__submenu {
+    position: absolute;
+    margin: 5px 0 0 -10px;
+    background: rgba(255, 255, 255, .8);
+    border-radius: 0 0 3px 3px;
+    padding: 10px;
+    visibility: hidden;
+}
+
+.menu__item:hover .menu__submenu {
+    visibility: visible;
+}
+
+.menu__subitem {
+    display: block;
+    padding: 4px 0;
+}

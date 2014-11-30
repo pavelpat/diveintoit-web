@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="background.css">
+    <link rel="stylesheet" href="cloud.css">
+    <script type="text/javascript" src="raf-polyfill.js"></script>
+</head>
+<body>
+<div class="cloud"></div>
+<script type="text/javascript">
+    /**
+     * Анимирует перемещение элемента в указанную позицию
+     * с использованием requestAnimationFrame().
+     */
+    function animate(element, animation, timing, time) {
+        (function nextAnimationFrame() {
+            window.requestAnimationFrame(function (elapsed) {
+                // Степень завершенности анимации.
+                var progress = elapsed / time;
+
+                if (progress < 1) {
+                    animation(element, timing(progress));
+                    nextAnimationFrame();
+                } else {
+                    animation(element, timing(1));
+                }
+            });
+        })();
+    }
+
+    /**
+     * Функция анимирования передвижения элемента с помощью свойства left и top.
+     */
+    function animation(element, progress) {
+        // Перемещение по горизонтали.
+        element.style.left = (1000 * progress) + 'px';
+
+        // Перемещение по вертикали.
+        element.style.top = (-Math.sin(progress * Math.PI * 5) * 200 + 200) + 'px';
+    }
+
+    /**
+     * Функция определения степени готовности на основе степени завершенности анимации по времени.
+     */
+    function timingSquare(progress) {
+        return Math.pow(progress, 2);
+    }
+
+    var cloud = document.querySelector('.cloud');
+    animate(cloud, animation, timingSquare, 20000);
+</script>
+</body>
+</html>

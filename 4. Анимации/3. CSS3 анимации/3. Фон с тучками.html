@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="background.css">
+    <link rel="stylesheet" href="cloud.css">
+
+    <style type="text/css">
+        @keyframes cloud-move {
+            from {
+                transform: translateX(-500px);
+                opacity: 0;
+            }
+            5% {
+                opacity: 1;
+            }
+            95% {
+                opacity: 1;
+            }
+            to {
+                transform: translateX(1000px);
+                opacity: 0;
+            }
+        }
+
+        .cloud {
+            animation: cloud-move 0s linear infinite backwards;
+        }
+
+        .cloud1 {
+            animation-duration: 70s;
+            animation-delay: 8s;
+            top: 200px;
+            opacity: .8;
+        }
+
+        .cloud2 {
+            animation-duration: 50s;
+            animation-delay: 5s;
+            top: 50px;
+            opacity: .9;
+        }
+
+        .cloud3 {
+            animation-duration: 30s;
+            animation-delay: 3s;
+            top: 300px;
+        }
+
+        .cloud4 {
+            animation-duration: 26s;
+            top: 150px;
+        }
+    </style>
+
+    <script type="text/javascript" src="prefixfree.min.js"></script>
+</head>
+<body>
+<div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
+<div class="cloud cloud3"></div>
+<div class="cloud cloud4"></div>
+</body>
+</html>

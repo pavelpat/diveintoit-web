@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="background.css">
+    <link rel="stylesheet" href="cloud.css">
+    <script type="text/javascript" src="raf-polyfill.js"></script>
+</head>
+<body>
+<div class="cloud"></div>
+<script type="text/javascript">
+    /**
+     * Анимирует перемещение элемента в указанную позицию.
+     */
+    function animateSetInterval(element, animation, timing, time) {
+        var timeStart = new Date();
+
+        var interval = window.setInterval(function () {
+            var timeCurrent = new Date(),
+                    progress = (timeCurrent - timeStart) / time;
+
+            // Для примера отображения в Chrome DevTools.
+            // Увеличение времени обработки кадра.
+            //for (var i = 0; i < 500000; i++) { window.i = i; }
+
+            if (progress < 1) {
+                animation(element, timing(progress));
+            } else {
+                animation(element, 1);
+                window.clearInterval(interval);
+            }
+        }, 16);
+
+        // Для примера отображения в Chrome DevTools.
+        // Callback будет выполняться ~ раз в 4 мс.
+        // Перерисовка будет выполняться ~ раз в 16 мс.
+        //}, 4);
+
+        // Для примера отображения в Chrome DevTools.
+        // Callback будет выполняться ~ раз в 100 мс.
+        // Перерисовка будет выполняться ~ раз в 100 мс.
+        //}, 100);
+    }
+
+
+    /**
+     * Анимирует перемещение элемента в указанную позицию
+     * с использованием requestAnimationFrame().
+     */
+    function animateRequestAnimationFrame(element, animation, timing, time) {
+        (function nextAnimationFrame() {
+            window.requestAnimationFrame(function (elapsed) {
+                // Степень завершенности анимации.
+                var progress = elapsed / time;
+
+                // Для примера отображения в Chrome DevTools.
+                // Увеличение времени обработки кадра.
+                for (var i = 0; i < 500000; i++) { window.i = i; }
+
+                if (progress < 1) {
+                    animation(element, timing(progress));
+                    nextAnimationFrame();
+                } else {
+                    animation(element, timing(1));
+                }
+            });
+        })();
+    }
+
+    /**
+     * Функция анимирования передвижения элемента с помощью свойства left и top.
+     */
+    function animationMove(element, progress) {
+        // Перемещение по горизонтали.
+        element.style.left = (1000 * progress) + 'px';
+
+        // Перемещение по вертикали.
+        element.style.top = (-Math.sin(progress * Math.PI * 5) * 200 + 200) + 'px';
+
+        // Любые другие css-свойства.
+    }
+
+    /**
+     * Функция анимирования передвижения элемента с помощью свойства transform.
+     */
+    function animationTransform(element, progress) {
+        // Перемещение по горизонтали и по вертикали.
+        element.style.transform = 'translateX(' + (1000 * progress) + 'px) translateY(' + (- Math.sin(progress * Math.PI * 5) * 200 + 200) + 'px)';
+
+        // Изменение прозрачности.
+        element.style.opacity = progress;
+
+        // Остальные css-свойства снижают производительность.
+    }
+
+    /**
+     * Временная функция.
+     */
+    function timingSquare(progress) {
+        return Math.pow(progress, 2);
+    }
+
+    var cloud = document.querySelector('.cloud');
+    //animateSetInterval(cloud, animationMove, timingSquare, 10000);
+    //animateSetInterval(cloud, animationTransform, timingSquare, 10000);
+    //animateRequestAnimationFrame(cloud, animationMove, timingSquare, 10000);
+    animateRequestAnimationFrame(cloud, animationTransform, timingSquare, 10000);
+</script>
+</body>
+</html>

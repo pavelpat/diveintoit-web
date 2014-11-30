@@ -1,0 +1,37 @@
+/* Облачко на CSS 3. */
+.cloud {
+    background: white;
+    width: 280px;
+    height: 100px;
+    position: absolute;
+    border-radius: 50px;
+    background: linear-gradient(#efefef, #efefef 10%, #ccc);
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.15);
+    margin-top: 80px;
+}
+
+/* Больший "шарик" облачка. */
+.cloud::before {
+    position: absolute;
+    content: "";
+    top: -65px;
+    left: 90px;
+    width: 150px;
+    height: 150px;
+    clip: rect(0, 150px, 75px, 0);
+    border-radius: 100%;
+    background: linear-gradient(#fff, #dfdfdf);
+}
+
+/* Меньший "шарик" облачка. */
+.cloud::after {
+    position: absolute;
+    content: "";
+    top: -40px;
+    left: 40px;
+    width: 100px;
+    height: 100px;
+    clip: rect(0, 100px, 50px, 0);
+    border-radius: 100%;
+    background: linear-gradient(#fafafa, #e4e4e4);
+}

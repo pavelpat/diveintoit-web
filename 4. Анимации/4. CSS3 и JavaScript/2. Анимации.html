@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="background.css">
+    <link rel="stylesheet" href="cloud.css">
+    <script type="text/javascript" src="prefixfree.min.js"></script>
+
+    <style type="text/css">
+        @keyframes move {
+            from {
+                left: 100px;
+            }
+            to {
+                left: 70%;
+            }
+        }
+
+        .cloud {
+            animation: move 5s 2 both;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="cloud"></div>
+
+<script type="text/javascript">
+    var cloud = document.querySelector('.cloud');
+
+    // Обработка события на анимируемом элементе.
+    cloud.addEventListener('animationstart', function (e) {
+        console.log('Обработано событие animationstart на элементе cloud.', e);
+    });
+
+    cloud.addEventListener('animationend', function (e) {
+        console.log('Обработано событие animationend на элементе cloud.', e);
+    });
+
+    cloud.addEventListener('animationiteration', function (e) {
+        console.log('Обработано событие animationiteration на элементе cloud.', e);
+    });
+
+    // Установка анимации на паузу.
+    window.setTimeout(function(){
+        // Остановим анимацию.
+        cloud.style.animationPlayState = 'paused';
+        cloud.style.webkitAnimationPlayState = 'paused';
+        console.log('Анимация поставлена на паузу.');
+
+        // И возобновим её через 5 секунд.
+        window.setTimeout(function(){
+            cloud.style.animationPlayState = 'running';
+            cloud.style.webkitAnimationPlayState = 'running';
+            console.log('Анимация возобновлена.');
+        }, 5000);
+    }, 1500);
+</script>
+</body>
+</html>

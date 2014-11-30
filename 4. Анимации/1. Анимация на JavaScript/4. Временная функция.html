@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="background.css">
+    <link rel="stylesheet" href="cloud.css">
+</head>
+<body>
+<div class="cloud"></div>
+<script type="text/javascript">
+    /**
+     * Выполняет анимацию, используя пользовательские анимационную и временную функции.
+     */
+    function animate(element, animation, timing) {
+        var timeStart = Date.now();
+
+        var interval = window.setInterval(function () {
+            // Степень завершенности анимации.
+            var progress = (Date.now() - timeStart) / 10000;
+
+            if (progress < 1) {
+                animation(element, timing(progress));
+            } else {
+                animation(element, 1);
+                window.clearInterval(interval);
+            }
+        }, 4);
+    }
+
+    /**
+     * Функция приведения состояния к степени завершения анимации.
+     */
+    function animation(element, progress) {
+        // Перемещение по горизонтали.
+        element.style.left = (1000 * progress) + 'px';
+
+        // Перемещение по вертикали.
+        element.style.top = (-Math.sin(progress * Math.PI * 5) * 200 + 200) + 'px';
+    }
+
+    /**
+     * Функция определения степени готовности на основе степени завершенности анимации по времени.
+     */
+    function timingSquare(progress) {
+        return Math.pow(progress, 4);
+    }
+
+    var cloud = document.querySelector('.cloud');
+    animate(cloud, animation, timingSquare, 20000);
+</script>
+</body>
+</html>

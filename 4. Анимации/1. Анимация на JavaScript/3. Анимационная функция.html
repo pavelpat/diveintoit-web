@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="background.css">
+    <link rel="stylesheet" href="cloud.css">
+</head>
+<body>
+<div class="cloud"></div>
+<script type="text/javascript">
+    /**
+     * Выполняет анимацию, используя пользовательскую анимационную функцию.
+     */
+    function animate(element, animation) {
+        var timeStart = Date.now();
+
+        var interval = window.setInterval(function () {
+            // Степень завершенности анимации.
+            var progress = (Date.now() - timeStart) / 10000;
+
+            if (progress < 1) {
+                animation(element, progress);
+            } else {
+                animation(element, 1);
+                window.clearInterval(interval);
+            }
+        }, 16);
+    }
+
+    /**
+     * Анимационная функция.
+     */
+    function animation(element, progress) {
+        // Перемещение по горизонтали.
+        element.style.left = (500 * progress) + 'px';
+
+        // Перемещение по вертикали.
+        element.style.top = (200 * progress) + 'px';
+    }
+
+    // Анимируемый элемент.
+    var cloud = document.querySelector('.cloud');
+
+    // Запуск анимации.
+    animate(cloud, animation, 1000);
+</script>
+</body>
+</html>
