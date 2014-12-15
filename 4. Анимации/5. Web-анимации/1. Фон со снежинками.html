@@ -20,167 +20,92 @@
             height: 20px;
             position: absolute;
         }
-
-        .snowflake1 {
-            left: 0;
-        }
-
-        .snowflake2 {
-            left: 10%;
-        }
-
-        .snowflake3 {
-            left: 20%;
-        }
-
-        .snowflake4 {
-            left: 30%;
-        }
-
-        .snowflake5 {
-            left: 40%;
-        }
-
-        .snowflake6 {
-            left: 50%;
-        }
-
-        .snowflake7 {
-            left: 60%;
-        }
-
-        .snowflake8 {
-            left: 70%;
-        }
-
-        .snowflake9 {
-            left: 80%;
-        }
-
-        .snowflake10 {
-            left: 90%;
-        }
-
-        .snowflake11 {
-            left: 0;
-        }
-
-        .snowflake12 {
-            left: 10%;
-        }
-
-        .snowflake13 {
-            left: 20%;
-        }
-
-        .snowflake14 {
-            left: 30%;
-        }
-
-        .snowflake15 {
-            left: 40%;
-        }
-
-        .snowflake16 {
-            left: 50%;
-        }
-
-        .snowflake17 {
-            left: 60%;
-        }
-
-        .snowflake18 {
-            left: 70%;
-        }
-
-        .snowflake19 {
-            left: 80%;
-        }
-
-        .snowflake20 {
-            left: 90%;
-        }
     </style>
 
     <script type="text/javascript" src="web-animations.min.js"></script>
 </head>
 <body>
-<div class="snowflake snowflake1"></div>
-<div class="snowflake snowflake2"></div>
-<div class="snowflake snowflake3"></div>
-<div class="snowflake snowflake4"></div>
-<div class="snowflake snowflake5"></div>
-<div class="snowflake snowflake6"></div>
-<div class="snowflake snowflake7"></div>
-<div class="snowflake snowflake8"></div>
-<div class="snowflake snowflake9"></div>
-<div class="snowflake snowflake10"></div>
-<div class="snowflake snowflake11"></div>
-<div class="snowflake snowflake12"></div>
-<div class="snowflake snowflake13"></div>
-<div class="snowflake snowflake14"></div>
-<div class="snowflake snowflake15"></div>
-<div class="snowflake snowflake16"></div>
-<div class="snowflake snowflake17"></div>
-<div class="snowflake snowflake18"></div>
-<div class="snowflake snowflake19"></div>
-<div class="snowflake snowflake20"></div>
 
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
 
 <script type="text/javascript">
     var flakes = document.querySelectorAll('.snowflake');
 
     for (var i = 0; i < flakes.length; i++) {
-        (function(element, delay){
-            // Кручение.
-            element.animate(
-                [
-                    {
-                        transform: 'translateX(0) rotate(0deg)'
-                    },
-                    {
-                        transform: 'translateX(100px) rotate(360deg)'
-                    }
-                ], {
-                    direction: 'alternate',
-                    duration: 3000,
-                    iterations: Infinity,
-                    easing: 'ease-in-out',
-                    fill: 'both',
-                    delay: delay
-                }
-            );
+        var element = flakes[i],
+            left = (Math.random() * 100) + '%',
+            delay = Math.random() * 20000;
 
-            // Падение.
-            element.animate(
-                [
-                    {
-                        top: '0',
-                        opacity: '0',
-                        offset: 0
-                    },
-                    {
-                        opacity: '1',
-                        offset: 0.1
-                    },
-                    {
-                        opacity: '1',
-                        offset: 0.8
-                    },
-                    {
-                        top: '90%',
-                        opacity: '0',
-                        offset: 1
-                    }
-                ], {
-                    direction: 'normal',
-                    duration: 20000,
-                    iterations: Infinity,
-                    fill: 'both',
-                    delay: delay
+        // Позиция по горизонтали.
+        element.style.left = left;
+
+        // Кручение.
+        element.animate(
+            [
+                {
+                    transform: 'translateX(0) rotate(0deg)'
+                },
+                {
+                    transform: 'translateX(100px) rotate(360deg)'
                 }
-            );
-        })(flakes[i], Math.random() * 20000);
+            ], {
+                direction: 'alternate',
+                duration: 3000,
+                iterations: Infinity,
+                easing: 'ease-in-out',
+                fill: 'both',
+                delay: delay
+            }
+        );
+
+        // Падение.
+        element.animate(
+            [
+                {
+                    top: '0',
+                    opacity: '0',
+                    offset: 0
+                },
+                {
+                    opacity: '1',
+                    offset: 0.1
+                },
+                {
+                    opacity: '1',
+                    offset: 0.8
+                },
+                {
+                    top: '90%',
+                    opacity: '0',
+                    offset: 1
+                }
+            ], {
+                direction: 'normal',
+                duration: 20000,
+                iterations: Infinity,
+                fill: 'both',
+                delay: delay
+            }
+        );
     }
 </script>
 
